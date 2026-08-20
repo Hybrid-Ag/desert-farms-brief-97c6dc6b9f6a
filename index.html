@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Desert Farms — Account Brief | Hybrid-Ag</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Palette, radius and shadow lifted from the Spearhead pitch so the two pieces
+   read as one house style. Alternate Gothic is a licensed Typekit face and is
+   not loaded here — same as the pitch, it falls back to Oswald. */
+:root{
+  --teal:#1b9690; --orange:#d9742b; --berry:#8c4f8e; --berry-d:#7c4a7a;
+  --grey:#6b665e; --ink:#1a1714; --stroke:#d6d0c7; --paper:#f4f1ea; --cream:#eae5df;
+  --green:#2e7d4f; --red:#c0392b;
+  --a:var(--teal); --measure:1180px; --r:8px;
+  --shadow:0 1px 2px rgba(26,23,20,.06), 0 4px 10px rgba(26,23,20,.05);
+  --display:"alternate-gothic-no-2-d", Oswald, "Arial Narrow", sans-serif;
+  --oswald:Oswald, "Arial Narrow", sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--paper); color:var(--ink);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:15px; line-height:1.5; -webkit-font-smoothing:antialiased}
+/* Oswald has no italic — never let the browser synthesise one */
+.eyebrow,.specbar .k,.specbar .v strong,.card h4,.card .n,.card .when,.card .k,
+h3.sub,.jump a,.banner,.pill,.tag,th,.askbox h3,.mast h1,.phead h2{font-style:normal}
+.wrap{max-width:var(--measure); margin:0 auto; padding:0 26px}
+
+.tri{display:flex; height:5px; width:100%}
+.tri i{flex:1 1 33.4%}
+.tri i:nth-child(1){background:var(--teal)}
+.tri i:nth-child(2){background:var(--orange)}
+.tri i:nth-child(3){background:var(--berry)}
+.tri-top{position:fixed; top:0; left:0; right:0; z-index:80; height:5px}
+
+/* ── masthead ─────────────────────────────────────────────── */
+.mast{position:relative; background:var(--cream); border-bottom:1px solid var(--stroke);
+  padding:22px 0 20px; margin-top:5px; overflow:hidden}
+.mast-row{display:flex; gap:26px; align-items:center; justify-content:space-between; flex-wrap:wrap}
+.lockup{font-family:var(--oswald); font-weight:700; font-size:19px; letter-spacing:2.5px;
+  text-transform:uppercase; display:flex; align-items:center; gap:9px}
+.lockup .mark{display:inline-flex; gap:3px}
+.lockup .mark i{width:7px; height:7px; border-radius:50%}
+.lockup .mark i:nth-child(1){background:var(--teal)}
+.lockup .mark i:nth-child(2){background:var(--orange)}
+.lockup .mark i:nth-child(3){background:var(--berry)}
+.mast-id{font-size:11.5px; color:var(--grey); text-align:right; line-height:1.5}
+.banner{display:inline-block; font-family:var(--oswald); font-weight:700; font-size:10.5px;
+  letter-spacing:1.2px; text-transform:uppercase; color:#fff; background:var(--berry);
+  padding:4px 10px; border-radius:3px}
+.mast h1{font-family:var(--display); font-weight:500; font-size:clamp(23px,3vw,31px);
+  line-height:1.1; margin:14px 0 5px; letter-spacing:-.2px}
+.mast .sub{font-size:14.5px; color:var(--grey); margin:0; max-width:70ch}
+.mast .sub b{color:var(--ink); font-weight:600}
+
+/* ── section head band ────────────────────────────────────── */
+.phead{background:var(--cream); border-bottom:1px solid var(--stroke); margin-top:26px}
+.phead .inner{padding:22px 0 20px}
+.phead .eyebrow{font-family:var(--oswald); font-weight:700; font-size:11px; letter-spacing:1.4px;
+  text-transform:uppercase; color:var(--a); margin:0 0 7px}
+.phead h2{font-family:var(--display); font-weight:400; font-size:clamp(25px,3.4vw,36px);
+  line-height:1.08; margin:0 0 7px; letter-spacing:-.2px}
+.phead .lede{font-size:15.5px; color:var(--ink); margin:0; max-width:62ch}
+
+/* ── spec bar ─────────────────────────────────────────────── */
+.specbar{display:grid; grid-template-columns:repeat(5,1fr); gap:0;
+  background:#fff; border:1px solid var(--stroke); border-radius:var(--r); overflow:hidden;
+  margin:20px 0 4px; box-shadow:var(--shadow)}
+.specbar > div{padding:12px 15px; border-right:1px solid var(--stroke)}
+.specbar > div:last-child{border-right:0}
+@media(max-width:980px){
+  .specbar{grid-template-columns:1fr 1fr}
+  .specbar > div{border-bottom:1px solid var(--stroke)}
+  .specbar > div:nth-child(2n){border-right:0}
+  .specbar > div:nth-last-child(-n+1){border-bottom:0}}
+.specbar .k{font-family:var(--oswald); font-weight:700; font-size:9.5px; letter-spacing:1.2px;
+  text-transform:uppercase; color:var(--grey); margin:0 0 4px}
+.specbar .v{font-size:13.5px; margin:0; line-height:1.35; color:var(--grey)}
+.specbar .v strong{font-family:var(--oswald); font-weight:700; font-size:16px; color:var(--a);
+  letter-spacing:.2px; display:block; margin-bottom:1px}
+.specbar .v strong.warn{color:var(--red)} .specbar .v strong.good{color:var(--green)}
+
+/* ── jump nav ─────────────────────────────────────────────── */
+.jump{display:flex; gap:6px; flex-wrap:wrap; margin:18px 0 2px; padding-bottom:14px;
+  border-bottom:1px solid var(--stroke)}
+.jump a{font-family:var(--oswald); font-weight:500; font-size:10.5px; letter-spacing:1px;
+  text-transform:uppercase; color:var(--grey); text-decoration:none; padding:4px 10px;
+  border:1px solid var(--stroke); border-radius:20px; background:#fff}
+.jump a:hover,.jump a:focus-visible{color:var(--ink); border-color:var(--a)}
+
+/* ── blocks ───────────────────────────────────────────────── */
+.blk{padding:24px 0 4px; scroll-margin-top:26px}
+h3.sub{font-family:var(--oswald); font-weight:500; font-size:12.5px; letter-spacing:2px;
+  text-transform:uppercase; color:var(--grey); margin:0 0 14px; display:flex; align-items:center; gap:12px}
+h3.sub::after{content:""; flex:1; height:1px; background:var(--stroke)}
+.intro{color:var(--ink); max-width:80ch; margin:0 0 14px; font-size:14.5px}
+p{margin:0 0 12px} ul,ol{margin:0 0 14px; padding-left:20px} li{margin-bottom:7px}
+a{color:var(--teal)}
+
+/* ── cards ────────────────────────────────────────────────── */
+.grid{display:grid; gap:13px; margin:0 0 14px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:860px){.g3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.grid{grid-template-columns:1fr!important}}
+.card{background:#fff; border:1px solid var(--stroke); border-radius:var(--r);
+  padding:14px 15px 15px; position:relative; overflow:hidden; box-shadow:var(--shadow);
+  isolation:isolate; transform:translateZ(0)}
+.card::before{content:""; position:absolute; top:0; left:0; right:0; height:4px; background:var(--a);
+  border-top-left-radius:var(--r); border-top-right-radius:var(--r)}
+.rot > .card:nth-child(3n+1){--a:var(--teal)}
+.rot > .card:nth-child(3n+2){--a:var(--orange)}
+.rot > .card:nth-child(3n+3){--a:var(--berry-d)}
+.card h4{font-family:var(--oswald); font-weight:700; font-size:11.5px; letter-spacing:1.1px;
+  text-transform:uppercase; color:var(--ink); margin:0 0 6px}
+.card h4.acc{color:var(--a)}
+.card p{margin:0 0 8px; font-size:13.5px}
+.card p:last-child{margin-bottom:0}
+.card .n{font-family:var(--oswald); font-weight:700; font-size:13px; color:var(--a);
+  letter-spacing:1px; margin:0 0 4px}
+.card .when{font-family:var(--oswald); font-weight:700; font-size:9.5px; letter-spacing:1.1px;
+  text-transform:uppercase; color:var(--a); margin:0 0 10px}
+
+/* ── ask box ──────────────────────────────────────────────── */
+.askbox{background:#fbf7fb; border:1px solid #e4d3e4; border-left:4px solid var(--berry);
+  border-radius:var(--r); padding:15px 18px; margin:0 0 16px}
+.askbox h3{font-family:var(--oswald); font-weight:700; font-size:12px; letter-spacing:1.3px;
+  text-transform:uppercase; color:var(--berry-d); margin:0 0 9px}
+.askbox ol{margin:0; padding-left:19px}
+.askbox li{font-size:13.8px; margin:0 0 7px; color:var(--berry-d)}
+.askbox li:last-child{margin-bottom:0}
+.ask-note{margin:11px 0 0; padding-top:10px; border-top:1px solid #e4d3e4;
+  font-size:13px; color:var(--berry-d)}
+
+/* teal + orange variants of the same box */
+.notebox{background:#fff; border:1px solid var(--stroke); border-left:4px solid var(--a);
+  border-radius:var(--r); padding:15px 18px; margin:0 0 16px; box-shadow:var(--shadow)}
+.notebox.o{--a:var(--orange)} .notebox.t{--a:var(--teal)}
+.notebox h3{font-family:var(--oswald); font-weight:700; font-size:12px; letter-spacing:1.3px;
+  text-transform:uppercase; color:var(--a); margin:0 0 8px}
+.notebox p:last-child{margin-bottom:0}
+
+/* ── tables ───────────────────────────────────────────────── */
+.tw{overflow-x:auto; margin:0 0 16px; border:1px solid var(--stroke); border-radius:var(--r);
+  background:#fff; box-shadow:var(--shadow)}
+table{border-collapse:collapse; width:100%; font-size:13.3px; min-width:560px}
+th{font-family:var(--oswald); font-weight:700; font-size:9.5px; letter-spacing:1.2px;
+  text-transform:uppercase; color:var(--grey); background:var(--cream); white-space:nowrap;
+  text-align:left; padding:9px 12px}
+td{text-align:left; padding:8px 12px; border-bottom:1px solid var(--stroke)}
+th.n,td.n{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+tfoot td{font-weight:600; background:var(--cream); border-top:1px solid var(--stroke); border-bottom:0}
+.tag{display:inline-block; font-family:var(--oswald); font-weight:700; font-size:9px;
+  letter-spacing:1.1px; text-transform:uppercase; border-radius:3px; padding:3px 7px; color:#fff}
+.tag.buy{background:var(--green)} .tag.gap{background:var(--orange)} .tag.na{background:var(--grey)}
+
+.src{font-size:12.5px; color:var(--grey); border-top:1px solid var(--stroke);
+  margin-top:34px; padding:16px 0 0}
+.src li{margin-bottom:5px}
+.foot{background:var(--ink); color:#c9c2b8; margin-top:40px; padding:20px 0; font-size:12px}
+.foot b{color:var(--paper)}
+</style>
+</head>
+<body>
+
+<div class="tri tri-top"><i></i><i></i><i></i></div>
+
+<header class="mast">
+  <div class="wrap">
+    <div class="mast-row">
+      <div class="lockup"><span class="mark"><i></i><i></i><i></i></span>HYBRID&#8226;AG</div>
+      <div class="mast-id">Account brief &middot; prepared 20 August 2026<br>For Nathan Katseli &amp; Jamie Granger &middot; internal</div>
+    </div>
+    <span class="banner">Re-engagement &middot; dormant 19 months</span>
+    <h1>Desert Farms Pty&nbsp;Ltd &mdash; Paul McLaughlin</h1>
+    <p class="sub">Referred by <b>Judah Rowe</b>. Account owner in Odoo: <b>Andrew Woodford</b>.
+    <b>0428 610 055</b> &middot; paul@pmgagriculture.com.au &middot; pauldesertfarms@gmail.com</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="specbar">
+    <div><p class="k">Relationship</p><p class="v"><strong>16 years</strong>first records 2009, as PMG Agriculture</p></div>
+    <div><p class="k">Spend in Odoo</p><p class="v"><strong>$55,070</strong>4 orders, Aug 24 – Jan 25, ex GST</p></div>
+    <div><p class="k">Last order</p><p class="v"><strong class="warn">19 months ago</strong>Jan 2025 — silent since</p></div>
+    <div><p class="k">Credit risk</p><p class="v"><strong class="good">B2 · Low</strong>no adverse, all invoices paid</p></div>
+    <div><p class="k">Program capture</p><p class="v"><strong class="warn">4 of 16</strong>products bought vs recommended</p></div>
+  </div>
+
+  <nav class="jump">
+    <a href="#who">Who they are</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#bought">What they buy</a>
+    <a href="#gap">The gap</a>
+    <a href="#credit">Credit</a>
+    <a href="#call">Call plan</a>
+    <a href="#gaps">Unknowns</a>
+  </nav>
+</div>
+
+<section class="phead">
+  <div class="wrap inner">
+    <p class="eyebrow">The short version</p>
+    <h2>A 16-year customer who went quiet after their biggest order</h2>
+    <p class="lede">Clean credit, a $50k limit already approved, and a full nutrient program
+    we wrote for them in 2024 that they only ever part-bought. This is a re-engagement and a
+    share-of-wallet call, not a cold pitch.</p>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <section class="blk" id="who">
+    <h3 class="sub">01 &nbsp;Who they actually are</h3>
+    <p class="intro">Paul McLaughlin is not a small grower. External reporting describes him as
+    once one of the biggest watermelon producers in Australia.</p>
+    <div class="grid g3 rot">
+      <div class="card">
+        <p class="n">The operation</p>
+        <h4 class="acc">Desert Springs Farm, Ali Curung NT</h4>
+        <p>Roughly 400&nbsp;km north of Alice Springs — the first commercial horticulture
+        operation established on Aboriginal land in the Northern Territory.</p>
+      </div>
+      <div class="card">
+        <p class="n">Scale</p>
+        <h4 class="acc">~8,000 t watermelon a year</h4>
+        <p>Plus Central Australia's first commercial peanut harvest — which matches the peanut
+        program sitting in our own files from 2020.</p>
+      </div>
+      <div class="card">
+        <p class="n">Structure</p>
+        <h4 class="acc">Leased, Centrefarm-managed</h4>
+        <p>Warrabri Aboriginal Land Trust; head lease held by Alekarenge Horticulture Pty Ltd.
+        Centrefarm developed 21 bores delivering up to 5,000&nbsp;ML.</p>
+      </div>
+    </div>
+    <p>He has been diversifying into rotational crops since at least 2021, and our September 2024
+    quote for <b>asparagus at Alice Springs</b> is part of that. Company registration is NSW
+    (Dubbo registered office, Condobolin postal) but the ABN's main business location is
+    <b>NT&nbsp;0872</b> — the Territory operation is the real centre of gravity.</p>
+  </section>
+
+  <section class="blk" id="timeline">
+    <h3 class="sub">02 &nbsp;Timeline with us</h3>
+    <div class="tw"><table>
+      <thead><tr><th>When</th><th>What happened</th></tr></thead>
+      <tbody>
+        <tr><td><b>2009 – 2013</b></td><td>Earliest records, filed under <b>PMG Agriculture</b> — soil tests, tissue tests, nutrient programs. 49 files from 2009 alone.</td></tr>
+        <tr><td><b>Nov 2012</b></td><td>Desert Farms Pty Ltd registered; GST from day one.</td></tr>
+        <tr><td><b>2013 – 2019</b></td><td>Steady trading — invoices on file for Cal-N-Fish, Calcium&nbsp;+&nbsp;TE, K-Max, liquid and dry prescription blends, and Power-Cal (first seen Apr 2018).</td></tr>
+        <tr><td><b>May 2020</b></td><td>Recorded Zoom meeting with Paul, still in the customer folder. Watermelon and peanut programs written that year.</td></tr>
+        <tr><td><b>Sep 2021</b></td><td>Credit account established — <b>$50,000 limit</b>.</td></tr>
+        <tr><td><b>Aug – Oct 2024</b></td><td>The big push: full watermelon program written 28 Aug, blend quotes for watermelon and Alice Springs asparagus, three orders placed. First written by <b>Judah Rowe</b>.</td></tr>
+        <tr><td><b>Jan 2025</b></td><td>Largest single order — <b>$23,534</b> ex GST.</td></tr>
+        <tr><td><b>Feb 2025</b></td><td>Overdue statement reminder. Paid — but it is the last real interaction on record.</td></tr>
+        <tr><td><b>Oct 2025</b></td><td>Credit file re-pulled. Katie Rowe: <i>"in our accepted range so happy to continue with 30 days terms."</i> The account was deliberately kept open.</td></tr>
+        <tr><td><b>Now</b></td><td><b>19 months with no order, no quote, no logged contact.</b></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="blk" id="bought">
+    <h3 class="sub">03 &nbsp;What they've bought</h3>
+    <p class="intro">Odoo era only. Everything before Aug 2024 predates the system — invoice PDFs
+    are on file but the dollar history is not, so lifetime value is higher than this.</p>
+    <div class="tw"><table>
+      <thead><tr><th>Date</th><th>Order</th><th>Product</th><th class="n">Qty</th><th class="n">Ex GST</th><th>Rep</th></tr></thead>
+      <tbody>
+        <tr><td>27 Aug 24</td><td>S00479</td><td>Power-Cal 1000L</td><td class="n">4</td><td class="n">$12,516</td><td>Judah Rowe</td></tr>
+        <tr><td>9 Sep 24</td><td>S00606</td><td>Opti-Cal 1000L</td><td class="n">4</td><td class="n">$8,880</td><td>A. Woodford</td></tr>
+        <tr><td>16 Oct 24</td><td>S01009</td><td>Nutri-Core NP 1000L</td><td class="n">3</td><td class="n">$10,140</td><td>A. Woodford</td></tr>
+        <tr><td>23 Jan 25</td><td>S01818</td><td>Power-Cal 1000L</td><td class="n">4</td><td class="n">$12,516</td><td>A. Woodford</td></tr>
+        <tr><td></td><td></td><td>Opti-Trace BudMax 1000L</td><td class="n">2</td><td class="n">$11,018</td><td></td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="4">Total — 4 orders</td><td class="n">$55,070</td><td></td></tr></tfoot>
+    </table></div>
+    <div class="notebox t">
+      <h3>Buying pattern</h3>
+      <p>Every line is <b>1000L shuttles</b> — no drums, no small packs. All four invoices sit at
+      zero residual. Deliveries route through <b>McArdle Freight at Burton, SA</b>: Adelaide is the
+      consolidation point for the road-train run to the Territory, which is why the quotes read
+      "B-Double or Road Train" and "freight via Adelaide".</p>
+    </div>
+  </section>
+
+  <section class="blk" id="gap">
+    <h3 class="sub">04 &nbsp;The gap — and it is the whole opportunity</h3>
+    <p class="intro">On 28 August 2024 Andrew Woodford and Rey Ancuna wrote Desert Farms a
+    complete watermelon nutrient program: <b>16 products across 13 growth stages, $4,693 per
+    hectare</b>, from pre-plant ground spread through to W5. They bought four of the sixteen.</p>
+    <div class="tw"><table>
+      <thead><tr><th>Program line</th><th>Rate on program</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Power-Cal (foliar)</td><td>100 L/ha</td><td><span class="tag buy">Buying</span></td></tr>
+        <tr><td>Opti-Cal (fertigation)</td><td>260 L/ha</td><td><span class="tag buy">Buying</span></td></tr>
+        <tr><td>Nutri-Core Soil Activator</td><td>100 L/ha</td><td><span class="tag buy">Buying</span></td></tr>
+        <tr><td>Opti-Trace BudMax</td><td>15 L/ha</td><td><span class="tag buy">Buying</span></td></tr>
+        <tr><td><b>Agri-Vive RF</b> (foliar + fertigation)</td><td><b>285 L/ha</b></td><td><span class="tag gap">Biggest gap</span></td></tr>
+        <tr><td><b>Dry Prescription Blend</b> (ground spread)</td><td><b>2,000 kg/ha</b></td><td><span class="tag gap">Biggest gap</span></td></tr>
+        <tr><td>K-Max</td><td>150 L/ha</td><td><span class="tag na">Not buying</span></td></tr>
+        <tr><td>Agri-Vive 0.0.30</td><td>50 L/ha</td><td><span class="tag na">Not buying</span></td></tr>
+        <tr><td>Bio-Sea FKF</td><td>35 L/ha</td><td><span class="tag na">Not buying</span></td></tr>
+        <tr><td>Power-N</td><td>80 L/ha</td><td><span class="tag na">Not buying</span></td></tr>
+        <tr><td>Opti-Mag</td><td>25 L/ha</td><td><span class="tag na">Not buying</span></td></tr>
+        <tr><td>Mycro-Tec SP / Mycro-Feast (soil primers)</td><td>10 L/ha each</td><td><span class="tag na">Not buying</span></td></tr>
+        <tr><td>Opti-Trace Zinc / Molybdenum</td><td>6 / 1 L/ha</td><td><span class="tag na">Not buying</span></td></tr>
+      </tbody>
+    </table></div>
+    <div class="notebox o">
+      <h3>Sizing this honestly</h3>
+      <p>The program is priced <b>per hectare</b> and we do not hold their planted area. If the
+      external figure of ~8,000&nbsp;t of watermelon is right, typical yields put them somewhere
+      around <b>130–200&nbsp;ha</b> — which would make the full program a six-figure annual line and
+      our $55k the small end of it. <b>Treat that as an order-of-magnitude prompt, not a number to
+      quote at him.</b> The first job on the call is simply to ask how many hectares he is planting
+      this season, across melons and the rotation crops.</p>
+    </div>
+  </section>
+
+  <section class="blk" id="credit">
+    <h3 class="sub">05 &nbsp;Credit and commercial standing</h3>
+    <ul>
+      <li><b>RiskScore B2 / 613 — Low.</b> 0.5–1.0% probability of default in the next 12 months.</li>
+      <li><b>No adverse information at all</b> — no ATO tax default, no payment defaults, no court actions, no mercantile enquiries, no published notices.</li>
+      <li><b>$50,000 limit, 30-day terms</b>, re-affirmed by Katie Rowe in October 2025.</li>
+      <li>All four Odoo invoices sit at zero residual. One overdue reminder went out in Feb 2025; it was settled.</li>
+      <li>15 credit enquiries and 2 cross-directorships — consistent with an operator running several entities, which is what PMG Agriculture and the Alekarenge lease structure suggest.</li>
+    </ul>
+    <p class="intro">Source: CreditorWatch report pulled 15 Oct 2025, in the customer folder under
+    Accounts&nbsp;&amp;&nbsp;Administration.</p>
+  </section>
+
+  <section class="blk" id="call">
+    <h3 class="sub">06 &nbsp;How to open the call</h3>
+    <p class="intro">He has 16 years of history with us and was written a full program two seasons
+    ago. The opening should acknowledge the gap rather than pretend it isn't there.</p>
+    <div class="askbox">
+      <h3>Ask, in this order</h3>
+      <ol>
+        <li><b>Lead with Judah.</b> He pointed us back to Paul — a warm door, worth naming in the first sentence.</li>
+        <li><b>The season and the area.</b> Hectares planted, melons versus rotation crops, and whether the Alice Springs asparagus block went ahead. We quoted it in Sep 2024 and there is no order against it.</li>
+        <li><b>What happened after January 2025?</b> Nineteen months of silence following his biggest ever order usually means something specific — a season, a price, a competitor, or a person leaving.</li>
+        <li><b>Take the program back to him.</b> He runs Power-Cal and Opti-Cal without the Agri-Vive RF and ground-spread blend the program was built around. Agri-Vive RF at 285 L/ha is the largest volume line he is not buying.</li>
+        <li><b>Offer a fresh soil test.</b> The most recent soil work in his folder is a 2023 copy of a 2020 test. A current test is the natural reason to re-write the program — and it is how the 2024 push started.</li>
+      </ol>
+      <p class="ask-note">Two seasons have passed since that program was written. Re-testing is
+      defensible on its own merits, not just as a door-opener.</p>
+    </div>
+    <div class="grid g2 rot">
+      <div class="card">
+        <p class="when">Thread to chase</p>
+        <h4 class="acc">Nematodes</h4>
+        <p>A SARDI nematode diagnostic submission form sits in his Programs folder.
+        <b>It is a blank template, not a result</b> — evidence the topic was raised, not that
+        testing happened. If nematode pressure is real in those sandy Territory soils it is a
+        strong opening for the soil primers (Mycro-Tec SP, Mycro-Feast) he has never bought.</p>
+      </div>
+      <div class="card">
+        <p class="when">Thread to chase</p>
+        <h4 class="acc">Asparagus at Alice Springs</h4>
+        <p>Quoted 17 Sep 2024 at $2,425/ha as a dry prescription blend, 1,800 kg/ha spread rate.
+        No order followed. Asparagus is a perennial with a multi-year establishment spend — if that
+        block exists, it is an annuity, not a one-off.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk" id="gaps">
+    <h3 class="sub">07 &nbsp;What I could not establish</h3>
+    <ul>
+      <li><b>Lifetime revenue.</b> Only the Odoo era ($55k) is quantified. Pre-2024 trading is evidenced by invoice PDFs — at least 15 invoices between 2015 and 2019 — but the values are not in a system I can total.</li>
+      <li><b>Planted hectares.</b> Not recorded anywhere in Odoo or the drive. The single most useful number to get on the call.</li>
+      <li><b>Why they stopped.</b> No CRM lead, no helpdesk ticket, no logged note explains the gap after Jan 2025. The record simply goes quiet.</li>
+      <li><b>Cross-checks in the agronomic brain</b> were not possible — that index is identity-stripped by design, so grower names are removed.</li>
+      <li>The apparent burst of 43 files in 2021 is a <b>migration artifact</b>, not activity — duplicate copies written on one day in March 2021.</li>
+    </ul>
+
+    <div class="src">
+      <b>Sources.</b>
+      <ul>
+        <li>Odoo — partner 32172; orders S00479 / S00606 / S01009 / S01818; invoices INV-00302 / 00557 / 00745 / 01538; delivery records, internal notes and accounts messages.</li>
+        <li>Customer Management SharePoint — <i>D / DESERT FARMS PTY LTD</i> (137 files, 2013–2026) and <i>P / PMG AGRICULTURE</i> (222 files, 2009–2021), including the Aug 2024 watermelon nutrient program, the Sep 2024 Alice Springs asparagus blend quote, and the CreditorWatch report of 15 Oct 2025.</li>
+        <li>Australian Business Register — ABN 85 161 105 880, active, GST registered, main location NT 0872.</li>
+        <li><a href="https://centrefarm.com/desert-springs-melon-farm/">Centrefarm — Desert Springs Melon Farm</a> (lease structure, bores, ~8,000 t, first commercial peanut harvest).</li>
+        <li><a href="https://www.abc.net.au/news/2023-12-13/desert-springs-farm-watermelon-harvest/103220510">ABC News — Desert Springs Farm watermelon harvest</a> and <a href="https://www.abc.net.au/news/2016-05-13/desert-springs-watermelon-farming-brings-new-hope-to-nt/7408926">ABC News, 2016</a>.</li>
+        <li><a href="https://alumni.csiro.au/crop-diversification-is-creating-new-opportunities-and-growth-for-a-northern-territory-melon-farmer/">CSIRO Alumni / FreshPlaza, 2021</a> (rotational crop diversification).</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<footer class="foot"><div class="wrap">
+  <b>Hybrid-Ag</b> &middot; internal account brief &middot; contains customer commercial and credit
+  information — <b>do not circulate outside Hybrid-Ag</b>.
+</div></footer>
+
+</body>
+</html>
